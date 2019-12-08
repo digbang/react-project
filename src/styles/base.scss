@@ -1,0 +1,46 @@
+@import "mixings";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ol,
+ul,
+li,
+p {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+:global {
+  .visibleDesktop {
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
+
+    @include media-breakpoint-only(sm) {
+      display: none;
+    }
+  }
+
+  .visibleMobile {
+    @include media-breakpoint-only(lg) {
+      display: none;
+    }
+
+    @include media-breakpoint-only(md) {
+      display: none;
+    }
+  }
+}
