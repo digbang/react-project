@@ -81,6 +81,9 @@
     "prepush": "cross-env npm run pretty && npm test",
     "pretty": "node_modules/.bin/prettier src/**/*.{js,jsx} --write"
   },
+  "pre-commit": [
+    "precommit"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
