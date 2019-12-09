@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SampleStore from "stores/SampleStore"
+import { withTranslation } from 'react-i18next'
 import styles from './sampleScene.scss'
 import SamplePresentation from "presentation/SamplePresentation"
 
@@ -16,17 +17,19 @@ class SampleScene extends React.Component {
     }
 
     render() {
-        return (
-            <>
-                <div className={styles.sampleClass}>
-                <SamplePresentation sampleStore={this.sampleStore} />
-                <button onClick={this.randomizeSampleVariable}>Change Sample Variable</button>
-                </div>
-            </>
-        )
+      const { t } = this.props
+
+      return (
+        <>
+          <div className={styles.sampleClass}>
+            <SamplePresentation sampleStore={this.sampleStore} />
+            <button onClick={this.randomizeSampleVariable}>{t('sampleText')}</button>
+          </div>
+        </>
+      )
     }
 }
 
 SampleScene.propTypes = {}
 
-export default SampleScene
+export default withTranslation('common')(SampleScene)
