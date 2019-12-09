@@ -4,11 +4,10 @@ import common from 'lang/common.json'
 
 i18n.use(initReactI18next).init({
   fallbackLng: 'en',
+  lng: 'en',
 
   // have a common namespace used around the full app
-  ns: [
-    'common',
-  ],
+  ns: ['common'],
   defaultNS: 'common',
 
   debug: true,

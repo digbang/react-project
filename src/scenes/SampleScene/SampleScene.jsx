@@ -1,35 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SampleStore from "stores/SampleStore"
+import SampleStore from 'stores/SampleStore'
 import { withTranslation } from 'react-i18next'
+import SamplePresentation from 'presentation/SamplePresentation'
 import styles from './sampleScene.scss'
-import SamplePresentation from "presentation/SamplePresentation"
 
 class SampleScene extends React.Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props)
 
-        this.sampleStore = new SampleStore()
-    }
+    this.sampleStore = new SampleStore()
+  }
 
-    randomizeSampleVariable = () => {
-        this.sampleStore.changeSampleVariable(Math.random())
-    }
+  randomizeSampleVariable = () => {
+    this.sampleStore.changeSampleVariable(Math.random())
+  }
 
-    render() {
-      const { t } = this.props
+  render() {
+    const { t } = this.props
 
-      return (
-        <>
-          <div className={styles.sampleClass}>
-            <SamplePresentation sampleStore={this.sampleStore} />
-            <button onClick={this.randomizeSampleVariable}>{t('sampleText')}</button>
-          </div>
-        </>
-      )
-    }
+    return (
+      <>
+        <div className={styles.sampleClass}>
+          <SamplePresentation sampleStore={this.sampleStore} />
+          <button type="button" onClick={this.randomizeSampleVariable}>
+            {t('sampleText')}
+          </button>
+        </div>
+      </>
+    )
+  }
 }
 
-SampleScene.propTypes = {}
+SampleScene.propTypes = {
+  t: PropTypes.func.isRequired,
+}
 
 export default withTranslation('common')(SampleScene)
