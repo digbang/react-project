@@ -1,6 +1,6 @@
 import React from 'react'
 import 'util/i18n'
-import 'styles/base.scss'
+import 'styles/base.scss';
 import SampleScene from 'scenes/SampleScene'
 
 const App = () => (
