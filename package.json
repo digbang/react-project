@@ -155,6 +155,7 @@
     "eslint-plugin-react-hooks": "^2.3.0"
   },
   "resolutions": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "acorn": "^5.7.4"
   }
 }
