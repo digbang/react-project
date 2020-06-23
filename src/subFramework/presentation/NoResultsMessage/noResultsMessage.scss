@@ -1,0 +1,10 @@
+@import "../styles/noResultsMessageVariables";
+
+.noResultsMessage {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  @include noResultsMessage;
+}

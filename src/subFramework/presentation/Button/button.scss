@@ -1,0 +1,128 @@
+@import "../styles/buttonVariables";
+
+.button {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  transition: all 200ms ease-out;
+  text-decoration: none;
+  width: fit-content;
+
+  .icon {
+    align-items: center;
+    display: flex !important;
+  }
+
+  &.iconLeft {
+    .icon {
+      order: -1;
+    }
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    transition: all 200ms ease-out, transform 1ms;
+  }
+
+  &:active:not(:disabled) {
+    transition: all 200ms ease;
+  }
+
+  @include defaultButtonAttributes;
+
+  &.secondary {
+    @include secondaryButtonAttributes;
+  }
+
+  &.cancel {
+    @include cancelButtonAttributes;
+  }
+
+  &.outline {
+    @include outlineButtonAttributes;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.big {
+    @include bigButtonAttributes;
+  }
+
+  &.small {
+    @include smallButtonAttributes;
+  }
+
+  &.smallest {
+    @include smallestButtonAttributes;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &.isLoading {
+    transition: all 200ms ease-out, transform 1ms;
+
+    @include isLoadingButtonAttributes;
+  }
+
+  &.circle {
+    padding: 0;
+    min-width: auto;
+    width: $buttonHeightNormal;
+
+    &.big {
+      width: $buttonHeightBig;
+    }
+
+    &.small {
+      width: $buttonHeightSmall;
+    }
+
+    &.smallest {
+      width: $buttonHeightSmallest;
+    }
+  }
+
+  &.error {
+    @include errorButtonAttributes;
+  }
+
+  .loadingRing {
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+
+    @include loadingSpinnerAttributes;
+  }
+
+  @include overrideButtonAttributes;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
