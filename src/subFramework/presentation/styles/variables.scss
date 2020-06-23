@@ -1,0 +1,40 @@
+$mainFont: Lato, sans-serif;
+
+/***** MAIN LAYOUT *****/
+/** main layout grid area, here you can define the size and position
+of your header, sidebar and main content */
+$mainLayoutGridArea: "header header" "sidebar main";
+/* headerHeight contentHeight / sidebarWidth contentWidth */
+$mainLayoutGridTemplate: 58px 1fr / 180px 1fr;
+/***** MAIN LAYOUT *****/
+
+/***** LOADING RING *****/
+$loadingRingColor: #000000;
+/***** LOADING RING *****/
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+
+/* *** EJEMPLO DE VARIABLES QUE ESPERA ENCONTRAR EL SUBFRAMEWORK ***
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #575757;
+  --primary-color: #005dab;
+  --primary-color-hover: #003b75;
+  --secondary-color: #16C465;
+  --secondary-color-hover: #16803c;
+
+  --button-default-background: var(--primary-color);
+  --button-default-background-hover: var(--primary-color-hover);
+  --button-secondary-background: var(--secondary-color);
+  --button-secondary-background-hover: var(--secondary-color-hover);
+  --button-cancel-background: #9a9a9a;
+  --button-cancel-background-hover: #8b8b8b;
+  --button-default-color: #ffffff;
+}
+*/

@@ -1,0 +1,27 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.wrapper {
+  flex: 1;
+  display: grid;
+  grid-template: $mainLayoutGridTemplate;
+  grid-template-areas: $mainLayoutGridArea;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+}

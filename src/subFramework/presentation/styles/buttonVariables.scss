@@ -1,0 +1,169 @@
+@import "mixins";
+
+$buttonHeightBig: 46px;
+$buttonHeightNormal: 40px;
+$buttonHeightSmall: 36px;
+$buttonHeightSmallest: 30px;
+
+@mixin defaultButtonAttributes {
+  /* default button attributes */
+  background: var(--button-default-background);
+  border: none;
+  border-radius: 20px;
+  color: var(--button-default-color);
+  font-family: $mainFont;
+  font-size: 16px;
+  height: $buttonHeightNormal;
+  min-width: 135px;
+  padding: 0 30px;
+
+  @include media-breakpoint-only(xs) {
+    padding: 0 15px;
+  }
+
+  /* hover and focused button attributes */
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--button-default-background-hover);
+  }
+
+  /* active button attributes */
+  &:active:not(:disabled) {
+    background-color: var(--button-default-background-hover);
+    opacity: 0.8;
+  }
+
+  /* attributes for the icon */
+  &:not(.circle) .icon {
+    margin-left: 5px;
+  }
+
+  /* attributes for the when the icon is on the left */
+  &.iconLeft {
+    .icon {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+
+    &.small {
+      padding-left: 20px;
+    }
+
+    &.smallest {
+      padding-left: 10px;
+    }
+  }
+}
+
+@mixin secondaryButtonAttributes {
+  background-color: var(--button-secondary-background);
+  color: var(--button-default-color);
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--button-secondary-background-hover);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--button-secondary-background-hover);
+    opacity: 0.8;
+  }
+}
+
+@mixin cancelButtonAttributes {
+  background-color: var(--button-cancel-background);
+  color: var(--button-default-color);
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--button-cancel-background-hover);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--button-cancel-background-hover);
+    opacity: 0.8;
+  }
+}
+
+@mixin outlineButtonAttributes {
+  background-color: transparent;
+  color: var(--button-default-background);
+  border-width: 2px;
+  border-style: solid;
+  border-image: initial;
+  border-color: currentcolor;
+  font-weight: normal;
+
+  &:hover {
+    color: var(--button-default-color);
+  }
+
+  &.secondary {
+    color: var(--button-secondary-background);
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--button-default-color);
+      background-color: var(--button-secondary-background);
+    }
+  }
+
+  &.cancel {
+    color: var(--button-cancel-background);
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: var(--button-default-color);
+      background-color: var(--button-cancel-background);
+    }
+  }
+}
+
+@mixin bigButtonAttributes {
+  border-radius: 23px;
+  font-weight: bold;
+  font-size: 18px;
+  height: $buttonHeightBig;
+}
+
+@mixin smallButtonAttributes {
+  border-radius: 18px;
+  height: $buttonHeightSmall;
+  font-size: 14px;
+}
+
+@mixin smallestButtonAttributes {
+  border-radius: 18px;
+  height: $buttonHeightSmallest;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@mixin isLoadingButtonAttributes {
+  padding-right: 35px;
+}
+
+@mixin errorButtonAttributes {
+  border: 2px solid var(--error-color) !important;
+}
+
+@mixin loadingSpinnerAttributes {
+  border-color: var(--button-default-color) transparent transparent transparent;
+
+  &.outline {
+    border-color: var(--primary-color) transparent transparent transparent;
+
+    &.secondary {
+      border-color: var(--button-secondary-background) transparent transparent transparent;
+    }
+
+    &.cancel {
+      border-color: var(--button-cancel-background) transparent transparent transparent;
+    }
+  }
+}
+
+@mixin overrideButtonAttributes {
+  /* here you can override any of the buttons default attributes*/
+}

@@ -1,0 +1,31 @@
+@import "mixins";
+
+@mixin paginatorContainer {
+  margin: 20px 0 0 0;
+}
+
+@mixin paginator {
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 0;
+}
+
+@mixin page {
+  border-radius: 100px;
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+@mixin hoverPage {
+  background: var(--paginator-hover-background);
+}
+
+@mixin activePage {
+  background: var(--paginator-active-background);
+  color: var(--paginator-active-color);
+}
+
+@mixin resultsData {
+  font-size: 14px;
+}
