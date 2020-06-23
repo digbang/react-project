@@ -9,7 +9,9 @@ class AuthService {
   getAuthUserFromCookie = (data) => AuthUser.fromCookie(data)
 
   /** sets whatever is needed for loadAuthUserFromBrowser to work * */
-  persistLoginData = (authUser) => Cookies.set('authUser', JSON.stringify(authUser))
+  persistLoginData = (authUser) => {
+    Cookies.set('authUser', JSON.stringify(authUser))
+  }
 
   /** sets whatever is needed for loadAuthUserFromBrowser to work * */
   getStoredLoginData = () => {
@@ -46,7 +48,7 @@ class AuthService {
       })
 
   logout = () => {
-    axios.get(this.getLogoutUri()).then(({ data }) => data)
+    axios.get(this.getLogoutUri()).then((response) => response.data)
 
     this.removePersistedData()
 

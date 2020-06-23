@@ -59,6 +59,8 @@ const ImageInput = ({ literal, inputStore, uploadButtonText, placeholder, round 
                   backgroundImage: `url(${showImage})`,
                 }
               }
+              role="button"
+              tabIndex={0}
             >
               {!showImage && placeholder}
             </div>

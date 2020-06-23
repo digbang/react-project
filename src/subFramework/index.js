@@ -5,7 +5,6 @@ import PrivateRoute from './presentation/PrivateRoute'
 import PageTitle from './presentation/PageTitle'
 import DynamicTable from './presentation/DynamicTable'
 import TablePagination from './presentation/TablePagination'
-import RouterStore, { syncHistoryWithStore } from './stores/RouterStore'
 import AsyncStore from './stores/AsyncStore'
 import RootStore from './stores/RootStore'
 import AuthStore from './stores/AuthStore'
@@ -38,8 +37,6 @@ export {
   PageTitle,
   DynamicTable,
   TablePagination,
-  RouterStore,
-  syncHistoryWithStore,
   AsyncStore,
   RootStore,
   AuthStore,

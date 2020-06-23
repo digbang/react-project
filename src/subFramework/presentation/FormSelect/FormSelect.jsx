@@ -136,7 +136,6 @@ const FormSelect = ({
       value={isMulti ? value.map((e) => e.value).join(', ') : (value && value.value) || '-'}
     />
   ) : (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className={styles.label}>
       {label && <FormLabel label={label} disabled={disabled} />}
       <Component
@@ -145,6 +144,7 @@ const FormSelect = ({
         ref={inputRef}
         isDisabled={disabled}
         getOptionLabel={(option) => {
+          // eslint-disable-next-line no-underscore-dangle
           if (option.__isNew__) {
             return option.label
           }

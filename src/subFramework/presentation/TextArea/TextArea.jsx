@@ -37,6 +37,7 @@ const TextArea = ({
 
 TextArea.propTypes = {
   label: PropTypes.string,
+  value: PropTypes.string,
   inputRef: PropTypes.func,
   error: PropTypes.bool,
   fullHeightLabel: PropTypes.bool,
@@ -47,6 +48,7 @@ TextArea.propTypes = {
 
 TextArea.defaultProps = {
   label: '',
+  value: '',
   inputRef: () => {},
   error: false,
   fullHeightLabel: false,

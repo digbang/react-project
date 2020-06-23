@@ -35,10 +35,12 @@ const DynamicTableHeader = ({
 
         return (
           <div
-            // eslint-disable-next-line react/no-array-index-key
-            key={i}
             className={c(styles.headerRowCell, sortable && styles.hasSort)}
             onClick={() => handleClickRowCell(column)}
+            role="button"
+            tabIndex={0}
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
           >
             {value}
             {sortable && (

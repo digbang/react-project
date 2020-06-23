@@ -32,7 +32,9 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
-    "global-require": "off"
+    "global-require": "off",
+    "react/jsx-wrap-multilines": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "plugins": [
     "prettier"

@@ -20,6 +20,7 @@ class AuthStore extends AsyncStore {
   }
 
   /** verifies if token is valid or expired * */
+  // eslint-disable-next-line
   checkTokenStatus(token) {
     if (this.getTimeToExpiration(token) <= 0) {
       return 'expired'
@@ -29,7 +30,7 @@ class AuthStore extends AsyncStore {
   }
 
   /** returns remaining time for token expiration * */
-  // eslint-disable-next-line class-methods-use-this
+  // eslint-disable-next-line
   getTimeToExpiration(token) {
     if (token && token !== 'undefined') {
       const expDate = getJWTExpDate(token) // token expiration date

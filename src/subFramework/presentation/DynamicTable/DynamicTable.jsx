@@ -57,6 +57,8 @@ const DynamicTable = ({
         onClick={(e) => handleRowClick(e, item)}
         key={`row_${item.id}`}
         style={gridStyle}
+        role="button"
+        tabIndex={0}
       >
         {columns.map(({ key, dataAccessor, customTitleAlt }) => {
           let value
