@@ -96,4 +96,4 @@ TablePagination.defaultProps = {
   displayResultsMessage: null,
 }
 
-export default observer(TablePagination)
+export default React.memo(observer(TablePagination))

@@ -74,7 +74,9 @@
     "test": "node scripts/test.js",
     "precommit": "cross-env npm run pretty && npm test",
     "prepush": "cross-env npm run pretty && npm test",
-    "pretty": "node_modules/.bin/prettier src/**/*.{js,jsx} --write"
+    "pretty": "node_modules/.bin/prettier src/**/*.{js,jsx} --write",
+    "analyze": "node scripts/analyze.js",
+    "analyze:source-map-explorer": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -152,5 +154,10 @@
   },
   "resolutions": {
     "websocket-extensions": "^0.1.4"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }

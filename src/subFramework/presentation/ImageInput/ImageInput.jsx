@@ -100,4 +100,4 @@ ImageInput.defaultProps = {
   round: false,
 }
 
-export default observer(ImageInput)
+export default React.memo(observer(ImageInput))

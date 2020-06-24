@@ -114,4 +114,4 @@ Button.defaultProps = {
   permission: null,
 }
 
-export default Button
+export default React.memo(Button)

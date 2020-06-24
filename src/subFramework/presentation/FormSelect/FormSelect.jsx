@@ -191,4 +191,4 @@ FormSelect.defaultProps = {
   value: null,
 }
 
-export default FormSelect
+export default React.memo(FormSelect)

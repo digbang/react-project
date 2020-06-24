@@ -136,4 +136,4 @@ DynamicTable.defaultProps = {
   data: [],
 }
 
-export default DynamicTable
+export default React.memo(DynamicTable)

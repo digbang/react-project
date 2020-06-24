@@ -77,4 +77,4 @@ DynamicTableHeader.defaultProps = {
   t: {},
 }
 
-export default observer(DynamicTableHeader)
+export default React.memo(observer(DynamicTableHeader))

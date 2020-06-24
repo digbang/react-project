@@ -93,4 +93,4 @@ InputWrapper.defaultProps = {
   as: Input,
 }
 
-export default observer(InputWrapper)
+export default React.memo(observer(InputWrapper))
