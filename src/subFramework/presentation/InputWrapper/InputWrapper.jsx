@@ -64,7 +64,7 @@ const InputWrapper = ({
 }
 
 InputWrapper.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  as: PropTypes.oneOfType([PropTypes.any]),
   alignError: PropTypes.oneOf(['start', 'center', 'end']),
   inputStore: PropTypes.instanceOf(InputStore),
   wrapperClassName: PropTypes.string,
