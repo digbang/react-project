@@ -34,6 +34,7 @@
     "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
     "global-require": "off",
     "react/jsx-wrap-multilines": "off",
+    "import/no-cycle": "off",
     "jsx-a11y/label-has-associated-control": "off"
   },
   "plugins": [
