@@ -57,4 +57,4 @@ TextArea.defaultProps = {
   autosize: true,
 }
 
-export default TextArea
+export default React.memo(TextArea)

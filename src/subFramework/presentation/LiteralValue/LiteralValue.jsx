@@ -21,4 +21,4 @@ LiteralValue.defaultProps = {
   value: null,
 }
 
-export default LiteralValue
+export default React.memo(LiteralValue)

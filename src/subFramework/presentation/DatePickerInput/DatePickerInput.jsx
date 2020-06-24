@@ -66,4 +66,4 @@ DatePickerInput.defaultProps = {
   icon: null,
 }
 
-export default DatePickerInput
+export default React.memo(DatePickerInput)
