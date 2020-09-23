@@ -153,7 +153,9 @@
     ]
   },
   "resolutions": {
-    "websocket-extensions": "^0.1.4"
+    "websocket-extensions": "^0.1.4",
+    "elliptic": "^6.5.3",
+    "http-proxy": "^1.18.1"
   },
   "devDependencies": {
     "chalk": "^4.1.0",
