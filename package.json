@@ -155,7 +155,8 @@
   "resolutions": {
     "websocket-extensions": "^0.1.4",
     "elliptic": "^6.5.3",
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "node-forge": "^0.10.0"
   },
   "devDependencies": {
     "chalk": "^4.1.0",
