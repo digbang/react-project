@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SampleStore from 'stores/SampleStore'
 import { withTranslation } from 'react-i18next'
 import SamplePresentation from 'presentation/SamplePresentation'
-import styles from './sampleScene.scss'
+import styles from './sampleScene.module.scss'
 
 class SampleScene extends React.Component {
   constructor(props) {
