@@ -1,9 +1,15 @@
-import { observable, action } from 'mobx'
+import { observable, action, makeObservable } from 'mobx'
 
 class SampleStore {
-  @observable sampleVariable = 1
+  sampleVariable = 1
 
-  @action
+  constructor() {
+    makeObservable(this, {
+      sampleVariable: observable,
+      changeSampleVariable: action,
+    })
+  }
+
   changeSampleVariable(value) {
     this.sampleVariable = value
   }
