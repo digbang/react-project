@@ -35,7 +35,9 @@
     "global-require": "off",
     "react/jsx-wrap-multilines": "off",
     "import/no-cycle": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "warn"
   },
   "plugins": [
     "prettier"
