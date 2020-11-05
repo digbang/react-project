@@ -1,21 +1,30 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, makeObservable } from 'mobx'
 
 class Sorter {
-  @observable sortField = ''
-  @observable sortSense = 'ASC'
+  sortField = ''
+  sortSense = 'ASC'
 
   constructor(sortField, sortSense) {
+    makeObservable(this, {
+      // observables
+      sortField: observable,
+      sortSense: observable,
+      // actions
+      setSort: action,
+      changeSort: action,
+      // computeds
+      isASC: computed,
+    })
+
     this.sortField = sortField
     this.sortSense = sortSense
   }
 
-  @action
   setSort(sortField, sortSense) {
     this.sortField = sortField
     this.sortSense = sortSense
   }
 
-  @action
   changeSort(sortField) {
     let sortSense = 'ASC'
 
@@ -27,7 +36,6 @@ class Sorter {
     this.sortSense = sortSense
   }
 
-  @computed
   get isASC() {
     return this.sortSense === 'ASC'
   }

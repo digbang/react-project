@@ -1,30 +1,42 @@
-import { observable, action } from 'mobx'
+import { observable, action, makeObservable } from 'mobx'
 import { AsyncStore } from 'subFramework'
 
 export default class InputStore extends AsyncStore {
-  @observable error = false
-  @observable value = ''
-  @observable errorMessage = ''
+  error = false
+  value = ''
+  errorMessage = ''
 
-  @action
+  constructor() {
+    super()
+
+    makeObservable(this, {
+      // observables
+      error: observable,
+      value: observable,
+      errorMessage: observable,
+      // actions
+      setError: action,
+      setValue: action,
+      clearError: action,
+      clearAll: action,
+    })
+  }
+
   setError(errorMessage) {
     this.error = true
     this.errorMessage = errorMessage
   }
 
-  @action
   setValue(value) {
     this.value = value || ''
     this.clearError()
   }
 
-  @action
   clearError() {
     this.error = false
     this.errorMessage = ''
   }
 
-  @action
   clearAll() {
     this.error = false
     this.errorMessage = null

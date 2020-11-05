@@ -1,9 +1,27 @@
-import { observable, computed, action } from 'mobx'
+import { observable, computed, action, makeObservable } from 'mobx'
 
 class AsyncStore {
-  @observable isLoading = true
-  @observable errors = []
-  @observable serverError = false
+  isLoading = true
+  errors = []
+  serverError = false
+
+  constructor() {
+    makeObservable(this, {
+      // observables
+      isLoading: observable,
+      errors: observable,
+      serverError: observable,
+      // actions
+      preRequest: action,
+      onSuccessRequest: action,
+      clearError: action,
+      setServerError: action,
+      finishRequest: action,
+      onErrorRequest: action,
+      // computeds
+      hasErrors: computed,
+    })
+  }
 
   requestProcess(request = null) {
     this.clearError()
@@ -18,7 +36,6 @@ class AsyncStore {
     return null
   }
 
-  @action
   preRequest(request) {
     this.isLoading = true
     this.errors = []
@@ -29,17 +46,14 @@ class AsyncStore {
     this.isLoading = false
   }
 
-  @action
   clearError() {
     this.serverError = false
   }
 
-  @action
   setServerError() {
     this.serverError = true
   }
 
-  @action
   finishRequest() {
     this.isLoading = false
   }
@@ -53,7 +67,6 @@ class AsyncStore {
     }
   }
 
-  @computed
   get hasErrors() {
     return !!this.errors.length
   }
