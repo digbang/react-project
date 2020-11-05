@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, makeObservable } from 'mobx'
 import moment from 'moment'
 import AsyncStore from './AsyncStore'
 import AuthService from '../services/AuthService'
@@ -6,12 +6,23 @@ import AuthService from '../services/AuthService'
 const getJWTExpDate = (token) => moment(JSON.parse(atob(token.split('.')[1])).exp * 1000)
 
 class AuthStore extends AsyncStore {
-  @observable authUser = null
+  authUser = null
   authService
   logoutTimeout
 
   constructor(authService = new AuthService()) {
     super()
+
+    makeObservable(this, {
+      // observable
+      authUser: observable,
+      // actions
+      updateToken: action,
+      updateAuthUser: action,
+      logout: action,
+      // computeds
+      isAuthenticated: computed,
+    })
 
     this.isLoading = false
     this.authService = authService
@@ -62,7 +73,6 @@ class AuthStore extends AsyncStore {
     return null
   }
 
-  @action
   basicLogin(username, password) {
     return this.authService.authenticate(username, password).then((authUser) => {
       this.authenticate(authUser)
@@ -90,28 +100,23 @@ class AuthStore extends AsyncStore {
     }, this.getTimeToExpiration(token))
   }
 
-  @action
   updateToken(token) {
     if (this.authUser) {
       this.authUser.updateToken(token)
     }
   }
 
-  @action
   updateAuthUser(authUser) {
     this.authUser = authUser
   }
 
-  @computed
   get isAuthenticated() {
     return this.authUser !== null && this.checkTokenStatus(this.authUser.token) !== 'expired'
   }
 
-  @action
   // eslint-disable-next-line class-methods-use-this
   keepAlive() {}
 
-  @action
   // eslint-disable-next-line class-methods-use-this
   logout() {
     this.authService.logout()

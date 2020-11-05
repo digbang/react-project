@@ -1,12 +1,16 @@
-import { observable } from 'mobx'
+import { observable, makeObservable } from 'mobx'
 
 class AuthUser {
   permissions = []
   userId
-  @observable token
+  token
   email
 
   constructor(userId, email, token) {
+    makeObservable(this, {
+      token: observable,
+    })
+
     this.userId = userId
     this.token = token
     this.email = email

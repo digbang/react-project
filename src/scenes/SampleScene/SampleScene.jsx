@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocalStore } from 'mobx-react'
 import SampleStore from 'stores/SampleStore'
@@ -14,14 +13,12 @@ const SampleScene = () => {
   }
 
   return (
-    <>
-      <div className={styles.sampleClass}>
-        <SamplePresentation sampleStore={sampleStore} />
-        <button type="button" onClick={randomizeSampleVariable}>
-          {t('sampleText')}
-        </button>
-      </div>
-    </>
+    <div className={styles.sampleClass}>
+      <SamplePresentation sampleStore={sampleStore} />
+      <button type="button" onClick={randomizeSampleVariable}>
+        {t('sampleText')}
+      </button>
+    </div>
   )
 }
 

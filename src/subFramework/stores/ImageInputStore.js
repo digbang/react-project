@@ -1,14 +1,14 @@
-import { action, observable } from 'mobx'
+import { action, observable, makeObservable } from 'mobx'
 import Resizer from 'react-image-file-resizer'
 
 class ImageInputStore {
-  @observable id = null
-  @observable image = null
-  @observable imageBase64
-  @observable urlImage
-  @observable savedImage = false
-  @observable loadingSaveImage = false
-  @observable imageTypeError = { error: false, message: '' }
+  id = null
+  image = null
+  imageBase64
+  urlImage
+  savedImage = false
+  loadingSaveImage = false
+  imageTypeError = { error: false, message: '' }
   maxWidth = 300
   maxHeight = 300
   quality = 100
@@ -16,10 +16,27 @@ class ImageInputStore {
   invalidErrorMessage = 'Invalid File Type'
 
   constructor() {
+    makeObservable(this, {
+      // observables
+      id: observable,
+      image: observable,
+      imageBase64: observable,
+      urlImage: observable,
+      savedImage: observable,
+      loadingSaveImage: observable,
+      imageTypeError: observable,
+      // actions
+      setUrlImage: action,
+      handleFileRead: action,
+      setImageTypeError: action,
+      clearImageTypeError: action,
+      selectImage: action,
+      setImage: action,
+    })
+
     this.fileReader = null
   }
 
-  @action
   setUrlImage(value) {
     this.urlImage = value
   }
@@ -44,7 +61,6 @@ class ImageInputStore {
     this.invalidErrorMessage = value
   }
 
-  @action
   handleFileRead() {
     Resizer.imageFileResizer(
       this.image, // is the file of the new image that can now be uploaded...
@@ -64,7 +80,6 @@ class ImageInputStore {
     this.imageTypeError = { error: true, message }
   }
 
-  @action
   clearImageTypeError() {
     this.imageTypeError = { error: false, message: '' }
   }
@@ -81,7 +96,6 @@ class ImageInputStore {
     return true
   }
 
-  @action
   selectImage(file) {
     if (this.validateImage(file)) {
       this.clearImageTypeError()
@@ -95,7 +109,6 @@ class ImageInputStore {
     }
   }
 
-  @action
   setImage(image) {
     this.image = image
   }

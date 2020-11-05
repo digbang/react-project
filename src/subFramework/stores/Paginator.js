@@ -1,13 +1,24 @@
-import { observable, action } from 'mobx'
+import { observable, action, makeObservable } from 'mobx'
 
 class Paginator {
-  @observable count = 0
-  @observable total = 0
-  @observable perPage = 10
-  @observable currentPage = 1
-  @observable totalPages = 1
+  count = 0
+  total = 0
+  perPage = 10
+  currentPage = 1
+  totalPages = 1
 
   constructor(count, total, perPage, currentPage, totalPages) {
+    makeObservable(this, {
+      // observables
+      count: observable,
+      total: observable,
+      perPage: observable,
+      currentPage: observable,
+      totalPages: observable,
+      // actions
+      setCurrentPage: action,
+    })
+
     this.count = count
     this.total = total
     this.perPage = perPage
@@ -15,7 +26,6 @@ class Paginator {
     this.totalPages = totalPages
   }
 
-  @action
   setCurrentPage(currentPage) {
     this.currentPage = currentPage
   }
