@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
 import { FormLabel, LiteralValue } from 'subFramework'
@@ -66,4 +66,4 @@ DatePickerInput.defaultProps = {
   icon: null,
 }
 
-export default React.memo(DatePickerInput)
+export default memo(DatePickerInput)

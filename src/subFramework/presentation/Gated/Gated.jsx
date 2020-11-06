@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
-import React from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { NavLink as RouterLink, Route as RouterRoute } from 'react-router-dom'
 import { StoreContext } from 'subFramework'
@@ -27,7 +27,7 @@ class Route extends RouterRoute {
   }
 }
 
-class NavLink extends React.PureComponent {
+class NavLink extends PureComponent {
   // eslint-disable-next-line react/static-property-placement
   static propTypes = {
     permission: PropTypes.string.isRequired,
@@ -54,7 +54,7 @@ class NavLink extends React.PureComponent {
   }
 }
 
-class Gated extends React.PureComponent {
+class Gated extends PureComponent {
   // eslint-disable-next-line react/static-property-placement
   static propTypes = {
     permission: PropTypes.string.isRequired,

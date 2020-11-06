@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import styles from './mainLayout.scss'
 
@@ -25,4 +25,4 @@ MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default React.memo(MainLayout)
+export default memo(MainLayout)

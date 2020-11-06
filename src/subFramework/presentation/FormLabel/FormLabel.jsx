@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import styles from './formLabel.scss'
@@ -20,4 +20,4 @@ FormLabel.defaultProps = {
   viewMode: false,
 }
 
-export default React.memo(FormLabel)
+export default memo(FormLabel)

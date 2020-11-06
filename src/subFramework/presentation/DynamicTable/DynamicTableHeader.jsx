@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
@@ -77,4 +77,4 @@ DynamicTableHeader.defaultProps = {
   t: {},
 }
 
-export default React.memo(observer(DynamicTableHeader))
+export default memo(observer(DynamicTableHeader))

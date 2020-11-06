@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import { memo, useCallback, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react'
 import c from 'classnames'
@@ -100,4 +100,4 @@ ImageInput.defaultProps = {
   round: false,
 }
 
-export default React.memo(observer(ImageInput))
+export default memo(observer(ImageInput))

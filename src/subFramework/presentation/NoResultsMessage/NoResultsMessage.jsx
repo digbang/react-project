@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import styles from './noResultsMessage.scss'
 
@@ -10,4 +10,4 @@ NoResultsMessage.propTypes = {
   message: PropTypes.string.isRequired,
 }
 
-export default React.memo(NoResultsMessage)
+export default memo(NoResultsMessage)

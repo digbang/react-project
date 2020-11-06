@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { memo, useContext } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { StoreContext } from 'subFramework'
@@ -114,4 +114,4 @@ Button.defaultProps = {
   permission: null,
 }
 
-export default React.memo(Button)
+export default memo(Button)

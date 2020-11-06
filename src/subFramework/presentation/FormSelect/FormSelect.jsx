@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 import { LiteralValue, FormLabel } from 'subFramework'
@@ -191,4 +191,4 @@ FormSelect.defaultProps = {
   value: null,
 }
 
-export default React.memo(FormSelect)
+export default memo(FormSelect)

@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import c from 'classnames'
@@ -136,4 +136,4 @@ DynamicTable.defaultProps = {
   data: [],
 }
 
-export default React.memo(DynamicTable)
+export default memo(DynamicTable)

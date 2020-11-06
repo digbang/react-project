@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
@@ -96,4 +96,4 @@ TablePagination.defaultProps = {
   displayResultsMessage: null,
 }
 
-export default React.memo(observer(TablePagination))
+export default memo(observer(TablePagination))

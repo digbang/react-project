@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import styles from './loadingRing.scss'
@@ -30,4 +30,4 @@ LoadingRing.defaultProps = {
   absolute: false,
 }
 
-export default React.memo(LoadingRing)
+export default memo(LoadingRing)

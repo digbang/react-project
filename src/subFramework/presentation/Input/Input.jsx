@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { FormLabel, LiteralValue } from 'subFramework'
@@ -70,4 +70,4 @@ Input.defaultProps = {
   value: '',
 }
 
-export default React.memo(Input)
+export default memo(Input)

@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { FormLabel, LiteralValue } from 'subFramework'
@@ -57,4 +57,4 @@ TextArea.defaultProps = {
   autosize: true,
 }
 
-export default React.memo(TextArea)
+export default memo(TextArea)

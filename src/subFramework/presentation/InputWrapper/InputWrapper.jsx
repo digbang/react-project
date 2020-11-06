@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { observer } from 'mobx-react'
 import { useTranslation } from 'react-i18next'
 import c from 'classnames'
@@ -93,4 +93,4 @@ InputWrapper.defaultProps = {
   as: Input,
 }
 
-export default React.memo(observer(InputWrapper))
+export default memo(observer(InputWrapper))

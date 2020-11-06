@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
 import styles from './pageTitle.scss'
 
@@ -22,4 +22,4 @@ PageTitle.defaultProps = {
   rightSection: null,
 }
 
-export default React.memo(PageTitle)
+export default memo(PageTitle)
