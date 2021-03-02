@@ -1,12 +1,12 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocalStore } from 'mobx-react'
 import SampleStore from 'stores/SampleStore'
 import SamplePresentation from 'presentation/SamplePresentation'
 import styles from './sampleScene.module.scss'
 
 const SampleScene = () => {
   const { t } = useTranslation()
-  const sampleStore = useLocalStore(() => new SampleStore())
+  const [sampleStore] = useState(() => new SampleStore())
 
   const randomizeSampleVariable = () => {
     sampleStore.changeSampleVariable(Math.random())

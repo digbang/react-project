@@ -4,8 +4,8 @@ import Resizer from 'react-image-file-resizer'
 class ImageInputStore {
   id = null
   image = null
-  imageBase64
-  urlImage
+  imageBase64 = null
+  urlImage = null
   savedImage = false
   loadingSaveImage = false
   imageTypeError = { error: false, message: '' }
