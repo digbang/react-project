@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import c from 'classnames'
 import DynamicTableColumn from 'subFramework/models/DynamicTableColumn'
 import Sorter from 'subFramework/stores/Sorter'
-import styles from './dynamicTableStyles.scss'
+import styles from './dynamicTableStyles.module.scss'
 
 const DynamicTableHeader = ({
   columns,

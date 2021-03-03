@@ -2,7 +2,7 @@ import { memo, useContext } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { StoreContext } from 'subFramework'
-import styles from './button.scss'
+import styles from './button.module.scss'
 
 const Button = ({
   label,

@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import PropTypes from 'prop-types'
-import styles from './mainLayout.scss'
+import styles from './mainLayout.module.scss'
 
 const MainLayout = ({ sidebar: Sidebar, header: Header, mainContent: MainContent, children }) => {
   return (

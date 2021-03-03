@@ -2,7 +2,7 @@ import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { FormLabel } from 'subFramework'
-import styles from './literalValue.scss'
+import styles from './literalValue.module.scss'
 
 const LiteralValue = ({ label, value }) => (
   <label className={c(styles.literalLabel)}>

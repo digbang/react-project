@@ -2,7 +2,7 @@ import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { FormLabel, LiteralValue } from 'subFramework'
-import styles from './input.scss'
+import styles from './input.module.scss'
 
 const handleInputChange = (e, onChange, onlyNumeric) => {
   if (onlyNumeric && !/^-?\d*[.]?\d{0,2}$/.test(e.target.value)) {

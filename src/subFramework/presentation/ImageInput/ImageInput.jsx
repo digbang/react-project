@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import c from 'classnames'
 import ImageInputStore from 'subFramework/stores/ImageInputStore'
 import { Button } from 'subFramework'
-import styles from './imageInput.scss'
+import styles from './imageInput.module.scss'
 
 const ImageInput = ({ literal, inputStore, uploadButtonText, placeholder, round }) => {
   const { imageTypeError, imageBase64, urlImage, loadingSaveImage } = inputStore

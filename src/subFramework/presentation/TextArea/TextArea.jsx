@@ -2,7 +2,7 @@ import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import { FormLabel, LiteralValue } from 'subFramework'
-import styles from './textArea.scss'
+import styles from './textArea.module.scss'
 
 const TextArea = ({
   label,

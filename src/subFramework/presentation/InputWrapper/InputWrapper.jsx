@@ -5,7 +5,7 @@ import c from 'classnames'
 import Input from 'subFramework/presentation/Input'
 import InputStore from 'subFramework/stores/InputStore'
 import PropTypes from 'prop-types'
-import styles from './inputWrapper.scss'
+import styles from './inputWrapper.module.scss'
 
 const InputWrapper = ({
   wrapperClassName,

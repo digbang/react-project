@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
 import { FormLabel, LiteralValue } from 'subFramework'
 import c from 'classnames'
-import styles from './datePickerInput.scss'
+import styles from './datePickerInput.module.scss'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const DatePickerInput = ({

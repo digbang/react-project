@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
 import Paginator from 'subFramework/stores/Paginator'
-import styles from './tablePagination.scss'
+import styles from './tablePagination.module.scss'
 
 const TablePagination = ({
   handlePageChange,

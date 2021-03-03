@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
-import styles from './formLabel.scss'
+import styles from './formLabel.module.scss'
 
 const FormLabel = ({ label, disabled, viewMode }) => (
   <div className={c(styles.label, disabled && styles.disabled, viewMode && styles.literalLabel)}>

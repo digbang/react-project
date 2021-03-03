@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import PropTypes from 'prop-types'
-import styles from './noResultsMessage.scss'
+import styles from './noResultsMessage.module.scss'
 
 const NoResultsMessage = ({ message }) => {
   return <div className={styles.noResultsMessage}>{message}</div>

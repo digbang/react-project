@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import PropTypes from 'prop-types'
-import styles from './pageTitle.scss'
+import styles from './pageTitle.module.scss'
 
 const PageTitle = ({ title, rightSection }) => {
   return (

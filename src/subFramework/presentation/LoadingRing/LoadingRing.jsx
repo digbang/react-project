@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import PropTypes from 'prop-types'
 import c from 'classnames'
-import styles from './loadingRing.scss'
+import styles from './loadingRing.module.scss'
 
 const LoadingRing = ({ small, center, absolute }) => (
   <div className={c(center && styles.center, absolute && styles.absolute)}>

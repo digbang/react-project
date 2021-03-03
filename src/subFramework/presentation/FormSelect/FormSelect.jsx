@@ -2,7 +2,7 @@ import { memo } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 import { LiteralValue, FormLabel } from 'subFramework'
-import styles from './formSelect.scss'
+import styles from './formSelect.module.scss'
 
 const customStyles = (mergeStyles, error) => ({
   control: (provided, state) => {

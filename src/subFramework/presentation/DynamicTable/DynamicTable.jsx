@@ -7,7 +7,7 @@ import Paginator from 'subFramework/stores/Paginator'
 import Sorter from 'subFramework/stores/Sorter'
 import DynamicTableColumn from 'subFramework/models/DynamicTableColumn'
 import DynamicTableHeader from './DynamicTableHeader'
-import styles from './dynamicTableStyles.scss'
+import styles from './dynamicTableStyles.module.scss'
 
 const DynamicTable = ({
   displayResultsMessage,
